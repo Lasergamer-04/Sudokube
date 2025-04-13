@@ -1,0 +1,67 @@
+"""
+RULES GLOBALES:
+1. Lors du lancement de l'app, une instance Grid est créée
+    --> Globale, suit l'app jusqu'à sa fermeture
+
+2. Génération d'une grille
+    --> generate(level:int)
+        --> niveau = nbe de cases complètes
+    --> Instance de Grid
+    --> Contient des nombres MODIFIABLES et d'autres NON MODIFIABLES
+    --> Sera modifiée, mais jamais supprimée
+
+3. Quand l'user veut rajouter un chiffre
+    --> fonction appelée
+        --> set_element(col:int, row:int, element:int)
+        --> return True (droit de modifier) ou False
+        --> modifie la liste de Grid
+
+4. Quand l'user veut réhinitialiser la grille
+    --> appelle la même fonction qu'au début
+        --> generate(level:int) -> list[list]
+
+5. Pas le droit de modifier la liste en dur edpuis le main.py
+    --> appeler les fonctions données dans backend.py
+    --> pas de création de liste autre que Grid.grid
+"""
+
+
+"""
+BACKEND EZE:
+✅ Vérifier la géneration du plateaux
+    --> il y a des choses contre nature qui se passent la (:
+✅ Quand on veut modifier un de nos chiffres avec is_allowed, le programme plante avec cette erreur:
+        File "C:\Users\faivr\OneDrive\Dokumente\Info Université\Python\projet_python_updated.py", line 150, in select_number
+            if self.grid_backend.is_allowed(col, row):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "C:\Users\faivr\OneDrive\Dokumente\Info Université\Python\backend.py", line 149, in is_allowed
+            return not self.grid[row][col].locked
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        AttributeError: 'int' object has no attribute 'locked'
+
+✅ si jamais tu fais une bonne fonction fonction is allowed, qui autorise que le chiffre est place uniquement si c un bon choix, on a meme pas besoin de changer qq chose.
+✅ si tu veux je fais en sorte qu'on ne peut pas mettre un chiffre dans une case deja remplie, mais ca veut dire que ta fonction doit marcher
+
+FRONTEND PABLO
+✅ faire en sorte que l'arrière plan change si jamais on clique dessus
+✅ regarder si le changement de couleur marche pour valider (quand eze finit)
+
+    Quand on sélectionne une case, elle clignote vite fait en jaune et revient à sa couleur normale
+        --> ça serait plus de laisser la case en jaune si jamais elle est sélectionnée
+    Bug des paramètres lorsque t'appelles la fonction set_element
+        --> les paramètres sont pour la petite cellule, pas pour la grille complète
+
+
+✅ Quand on sélectionne une case, elle reste sélectionnée même après avoir changé le chiffre
+❌ Button fermeture à l'accueil
+
+
+CE QU'IL RESTE DU CAHIER DES CHARGES:
+- décrire le contexte où ces 10 fonctions sont utilisées (documenter les arguments et les valeurs de retour).
+- indiquer  les  bibliothèques  importées  et  la  liste  des  fonctions  utilisées  de  ces bibliothèques (les API).  Expliquer pourquoi vous les avez utilisées.
+- chacune de ces fonctions sera accompagnée par un jeu d’essai
+- Ces différentes étapes correspondront aux différents paragraphes de votre rapport (1ere page du rapport avec le nom de votre logiciel, vos noms).
+- Il  faudra  rajouter  un  sommaire,  une  brève  description  de  ce  que  fait  le  projet  et  une conclusion  (difficultés  rencontrées,  extensions  possibles,  ...), un récapitulatif de qui a fait quoi,  et  une  bibliographie  (documents,  cours  en  lignes,  livre  (s),  liens  vidéos  utilisés)  et des captures d’écran de votre application.
+- Une soutenance est prévue pour chaque  projet (20 min. maximum). Des questions seront posées pour connaître l’expertise développée.
+- Merge the branche Code-improving-for-more-lisibility with the "main" one.
+"""

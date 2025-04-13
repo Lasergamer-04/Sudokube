@@ -1,0 +1,118 @@
+yoo
+yooo
+
+il fallait remonter vers les parents pour pouvoir colorier toutes
+les cases de la game en couleur
+je crois
+oui en fait la en cliquant sur une case ca la colorie mais
+ca ne l'enleve pas/on peut en choisir plusieures
+on peut déjà remettre le mode où yen a plueisurs coloriées,
+ensuite on résolvera le bug
+voila
+nice
+mtn faut remonter aux parents
+jpp executer le code XDDD j'ai besoin de toi 
+??? comment ça ? 
+ja juste r pour executer
+ahh oui merde
+et si je lance, tu peux stream ?
+c bon jai résolu* le prblm
+bv
+bigGrid c'est la plus grosse grille des 3 ?
+biggrid est la plus grande grille, le 3*3 des 3*3
+okok, bahh du coup avec ça: print(self.parent.parent_grid),
+    on remonte à BigGrid
+oui c le parent de smallGrid
+mais du coup à partir de là on peux colorier toutes les cases en bleu j'pense
+en gros faut dire qu'une seule case est en focus, et les autres non, une seule dans le bigGrid
+comment on accède aux enfants de bigParent ?
+tu dois utiliser small grid
+Tu me dis si mon code semble bon
+c comme ca dans big grid: 
+for _ in range(9):
+    small_grid = SmallGrid()
+    small_grid.parent_grid = self
+    self.small_grids.append(small_grid)
+    self.add_widget(small_grid)
+
+#c'est quelle couleur le bleu clair ? --> blue
+#et le foncé ? --> navy
+#Cbon wesh
+#faut enlever le bout de code du dessus nn?
+#la discussion ?
+# faut enlever le code de la ligne 68, sinon ca se superpose
+#oui elle est inuyile maintenant
+#Pour discuter, on peut → discussion.txt,
+#   comme ça il restera des traces kk
+👍
+Il manque des trucs encore ? Je sais plus ce qu'on a fini dans le ToDo 
+je vais voir
+
+j'ai commit et push sur github 👍
+si on veut (c pas dans le todo) on peut dissable les bouttons
+apres c chiant avec ma generation de boutton, faudra tt refaire
+Mais en même temps ça peut être stylé pour la suite, ça va nous laisser encore
+plus de possibilités
+sinon on s'en blc et on améliore juste le visu (genre écran d'accueil)
+franchement la on est motive et tt donc go tester les bouttons, juste les visu ca 
+va casser les burnes
+
+😂😂 go buttons alors
+
+Dcp c'est quand on select une case,
+tu demandes au backend pour chaque 
+nbe si ça passe, et si c'est pas bon
+alors disabled, sinon enabled ?
+vasy
+dcp je vais faire un truc pour enable et disable les bouttons et toi tu fais la 
+fonction dans le backend?
+azy, mais ej crois que backend j'ai djà une fonction qui fait le taf
+(enable word wrap dans la partie "view" de vscode, ça sera mieux pour le discussion)
+bien vu
+
+la fonction c'est "is_valid(col, row, nbe_à_tester)
+Dcp fautt faire une boucle de 1 à 9, et pour chaque t'appelles cette fonction
+Sauf si tu préfères que je fasse une fonction qui test et te renvoie les nbes possibles
+comme tu veux, je peux faire les deux
+donc moi je demande pour une case si chaque chiffre fonctionne?
+Soit ça soit tu envoies juste une case et je renvoie une liste des nbes possibles
+je pense c plus simple si moi je demande
+👍
+On est toujours dans la méthode "on focus" de SudokuCell du coup?
+non
+c dans select_number de GameScreen
+La "select number" elle transforme juste le number nan ? Faudrait pas le faire direct dans la cellule plutôt ? (juste une question, si ça se trouve j'ai rien capté)
+bah la actuellement dans la cellule, il y a rien qui permet de mettre un numero
+nn mais c'est dans le select que les buttons se disablent ou pas, pas quand on modifie les numéros
+?
+regarde l.75
+ouioui
+je ne suis pas sur que les coordonees la sont les 9*9
+je check avec un print
+c'est du 3x3
+faut alors aller dans BigGrid, ou les 9*9 sont cree. (ligne 144)
+C'est quoi le nom de la variable ?
+celle qui soccupe des coordonees?
+Oui, ccelle qui contient le 9x9
+c dans set_grid_values, values
+je sais pas comment récupérer la valeur précise de la cell selected précise…
+ligne 161
+Je récupère la cellule, mais pas ses coordonnées! (coordonnées = bigParent.selected_cell)
+ligne 82 + 83 calcul de row et col 
+gg bg wp
+cimer
+alors c quoi le prochain bug?
+ça plante avec une big error mais je sais pas pourquoi
+c quoi l'erreur?
+c'est bon, c'était dans le backend :D j'avais changé un truc sans faire exprès
+garr
+Ya un bug quand on essaie de rentrer un nbe dans un autre 3x3 que celui en haut à gauche
+ptn on avait deja cette erreur mais on lavait reolue :
+c exactement le meme probleme qu'aux debut
+oui, je vais
+
+
+Fix Grid value access in backend and enhance GameScreen navigation
+
+https://www.sudoku.cash/images/sudoku_app_logo.png
+
